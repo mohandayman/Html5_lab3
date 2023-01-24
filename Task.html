@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 200px;
+        opacity: 1;
+        transition: opacity 3s 0s linear;
+      }
+
+      img:hover {
+        opacity: 0;
+      }
+      .Task1 {
+        display: flex;
+        justify-content: space-around;
+        width: 400px;
+        height: 300px;
+        border: 2px solid black;
+        align-items: center;
+        align-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: row;
+        float: left;
+      }
+      #Task2 {
+        display: flex;
+        justify-content: flex-start;
+        width: 500px;
+        height: 300px;
+        border: 2px solid black;
+        align-items: center;
+        align-content: space-around;
+        flex-wrap: wrap;
+        flex-direction: column;
+        float: right;
+        margin-bottom: 20px;
+      }
+      #nameMassege,
+      #emailMassege {
+        margin: 10px;
+        color: red;
+      }
+      input {
+        border: 1px solid red;
+        margin: 5px;
+      }
+
+      .vl {
+        border-left: 3px solid gray;
+        height: 300px;
+        position: absolute;
+        left: 45%;
+      }
+      #Task2 > input[type="text"]:nth-child(3):focus,
+      #Task2 > input[type="email"]:nth-child(6):focus {
+        outline: none;
+      }
+      #Task2 > input[type="email"]:nth-child(6):valid,
+      #Task2 > input[type="text"]:nth-child(3):valid {
+        border: 2px solid green;
+      }
+      #Task2 > input[type="email"]:nth-child(6):valid + div,
+      #Task2 > input[type="text"]:nth-child(3):valid + div {
+        display: none;
+      }
+      hr {
+        clear: both;
+        margin-top: 30px;
+        display: block;
+        margin-bottom: 20px;
+        border: 1px solid black;
+      }
+      #btn{
+          width: 400px;
+          background-color: aliceblue;
+          padding: 20px;
+          border-radius: 50px;
+          display: block;
+          margin: 50px auto;
+          animation-name: btnAnimation ;
+        
+        animation-duration: 5s;
+        animation-delay: 1s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      @keyframes btnAnimation {
+          1%{
+            background-color: red;
+            width: 500px;
+          }
+          20%{
+            background-color: blue;
+            width: 700px;
+
+          }
+          50%{
+            background-color: green;
+            width: 800px;
+
+          }
+          90%{
+            background-color: orangered;
+            width: 900px;
+          }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="Task1">
+      <h2>Task 1</h2>
+      <img src="./download.jfif" alt="" />
+    </div>
+    <div class="vl"></div>
+
+    <div id="Task2">
+      <h2>Task 2</h2>
+      <label for="">username</label>
+      <input type="text" placeholder="user Name" minlength="5" required />
+      <div id="nameMassege">username must at least 5 chracters</div>
+      <label for="">email</label>
+      <input type="email" name="" id="" placeholder="Email" required />
+      <div id="emailMassege">email must be valid</div>
+    </div>
+    <hr />
+    <div id="Task3">
+        <h2 style="    margin: auto;
+        display: block;
+        width: 100px;">Task 3</h2>
+        <button id="btn"> Hover To Button</button>
+    </div>
+  </body>
+</html>
